@@ -1,0 +1,107 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    padding: 0%;
+    margin: 0%;
+    background-color: #F8F8F8;
+}
+
+.box {
+    padding: 0%;
+    margin: 0%;
+    margin-top: 40px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.header {
+    background-color:#407BFF;
+    padding: 0%;
+    height: 80px;
+}
+
+.header .container-fluid {
+    padding: 0%;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 105%;
+
+    letter-spacing: -0.04em;
+}
+
+.btn{
+    width: 100%;
+    border-radius: 20px;
+    /* background-color: #407BFF; */
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+
+.btn .btn-primary{
+    width: 100%;
+    border-radius: 20px;
+    background-color: #407BFF;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+
+.btn-wa {
+    color: white;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #0DC143;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn-wa:hover {
+    color: white;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #0DC143;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+footer {
+    width: auto;
+    height: 60px;
+    color: white;
+    font-weight: 500;
+}
+
+.id h5{
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.id h6{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.id p{
+    font-weight: normal;
+    font-size: 16px;
+}

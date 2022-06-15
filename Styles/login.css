@@ -1,0 +1,115 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* body{
+    background-image: url(https://github.com/mahli262/tugas-wad/blob/main/W6/bg.png?raw=true);
+    background-repeat: repeat-y;
+} */
+
+.navbar{
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+
+.container-fluid{
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 40px;
+    margin-bottom: 38px;
+}
+
+.container-fluid .navbar-brand{
+    color: #407BFF;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 0%;
+    margin: 0%;
+}
+
+.container-fluid .navbar-brand:hover{
+    color: #407BFF;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 0%;
+    margin: 0%;
+}
+
+.container {
+    padding: 0%;
+}
+
+.container .row .col-6 {
+    padding: 0%;
+}
+
+.container .row .col-6 h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 105%;
+    /* identical to box height, or 38px */
+
+    letter-spacing: -0.04em;
+
+    color: #407BFF;
+    margin-bottom: 10px;
+}
+
+.container .row .col-6 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 105%;
+    /* identical to box height, or 17px */
+
+    letter-spacing: -0.04em;
+    color: #808080;
+    margin-bottom: 15px;
+}
+
+.col-6 form .btn {
+    width: 160px;
+    border-radius: 20px;
+    background-color: #407BFF;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+
+.col-6 form .form-label {
+/* margin-bottom: 5px; */
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 105%;
+/* identical to box height, or 17px */
+
+letter-spacing: -0.04em;
+
+color: #000000;
+margin-bottom: 5px;
+margin-top: 20px;
+}
+
+.col-6 form .form-control {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0%;
+}
+
+.col-6 .extra p {
+    color: green;
+}
+
+footer {
+    width: auto;
+    height: 60px;
+    color: white;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0;
+}

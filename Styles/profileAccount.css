@@ -1,0 +1,139 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    padding: 0%;
+    margin: 0%;
+    background-color: #F8F8F8;
+}
+
+.box {
+    padding: 0%;
+    margin: 0%;
+    margin-top: 40px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.header {
+    background-color:#407BFF;
+    padding: 0%;
+    height: 80px;
+}
+
+.header .container-fluid {
+    padding: 0%;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 105%;
+
+    letter-spacing: -0.04em;
+}
+
+.checked {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 105%;
+    /* identical to box height, or 19px */
+
+    letter-spacing: -0.04em;
+
+    color: #407BFF;
+}
+
+.unchecked {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 105%;
+    /* identical to box height, or 19px */
+
+    letter-spacing: -0.04em;
+
+    color: #9E9E9E;
+}
+
+.unchecked:hover {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 105%;
+    /* identical to box height, or 19px */
+
+    letter-spacing: -0.04em;
+
+    color: #407BFF;
+}
+
+.page {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 105%;
+    /* or 27px */
+
+    letter-spacing: -0.04em;
+
+    color: #407BFF;
+}
+
+.id h6{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.id p{
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.id h5 {
+    font-weight: 500;
+font-size: 20px;
+}
+
+footer {
+    width: auto;
+    height: 60px;
+    color: white;
+    font-weight: 500;
+}
+
+.form-label {
+    /* margin-bottom: 5px; */
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 105%;
+    /* identical to box height, or 17px */
+    
+    letter-spacing: -0.04em;
+    
+    color: #000000;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0%;
+}
+
+.btn {
+    width: 100%;
+    border-radius: 20px;
+    background-color: #407BFF;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    
+}

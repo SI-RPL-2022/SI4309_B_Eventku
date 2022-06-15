@@ -1,0 +1,136 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    padding: 0%;
+    margin: 0%;
+}
+
+.separator {
+    height: 190px;
+}
+
+.container {
+    padding: 0%;
+    margin: 0%;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.header {
+    padding: 0%;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.header .container-fluid {
+    padding: 0%;
+}
+
+img {
+    max-width: 573.47px;
+    width: auto;
+}
+
+.navigation nav {
+    padding-top: 26px;
+    padding-bottom: 70px;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 105%;
+/* or 25px */
+
+    letter-spacing: -0.04em;
+
+}
+
+.sign-in {
+    padding: 0%;
+    padding-top: 11px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 138px;
+    height: 48px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 105%;
+
+    text-align: center;
+    letter-spacing: -0.04em;
+    border-radius: 10px;
+}
+
+.sign-up {
+    padding: 0%;
+    padding-top: 11px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 138px;
+    height: 48px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 105%;
+
+    text-align: center;
+    letter-spacing: -0.04em;
+    border-radius: 10px;
+}
+
+.title h1{
+    font-weight: 700;
+    font-size: 54px;
+    letter-spacing: -0.04em;
+    line-height: 105%;
+}
+
+.title p{
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 24px;
+}
+
+.browse {
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 0%;
+    padding-top: 9px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: 205px;
+    width: 100%;
+}
+
+.about-us p {
+    text-align: justify;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.about-us h3 {
+    text-align: justify;
+    font-weight: 700;
+    font-size: 32px;
+    color: #407BFF;
+}
+
+.our-team h3 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    color: #407BFF;
+}
+
+footer {
+    width: auto;
+    height: 60px;
+    color: white;
+    font-weight: 500;
+}
