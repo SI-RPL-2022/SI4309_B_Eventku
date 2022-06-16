@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../Styles/landingpages.css">
+    <link rel="stylesheet" href="Styles/landingpages.css">
     <link rel="icon" href="https://raw.githubusercontent.com/mahli262/tugas-wad/main/Images/Tubes/logo.png" type="image/icon type">
     <title>Event-Ku</title>
 </head>
@@ -26,8 +26,8 @@
                   
                 </ul>
                 <div class="d-flex">
-                  <a href="loginAs.html" class="sign-in btn btn-primary me-2" >Sign In</a>
-                  <a href="registAs.html" class="sign-up btn btn-outline-primary me-2" >Sign Up</a>
+                  <a href="/Pages/loginAs.html" class="sign-in btn btn-primary me-2" >Sign In</a>
+                  <a href="Pages/registAs.html" class="sign-up btn btn-outline-primary me-2" >Sign Up</a>
                 </div>
               </div>
             </div>
