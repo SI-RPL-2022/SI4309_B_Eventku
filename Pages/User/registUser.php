@@ -42,7 +42,7 @@
                         <p style="text-align: justify; color: #808080; font-size: 16px;">already have an account?<a style="font-weight: 600; text-decoration: none;" href="../loginAs.html">Login</a></p>
                     </div>
                     <!-- <p>sign in to use more features</p> -->
-                    <form autocomplete="off" action="#" method="POST" >
+                    <form autocomplete="off" action="../../Config/Regist/registUser.php" method="POST" >
                         <div >
                           <label for="name" class="form-label" style="margin-top: 15px;">Name</label>
                           <input type="text" name="name" class="form-control" id="name" placeholder="Name">
@@ -51,7 +51,11 @@
                           <label for="email" class="form-label" style="margin-top: 15px;">Email</label>
                           <input type="email" name="email" class="form-control" id="email" placeholder="Email">
                         </div>
-                        <div >
+                        <?php  $erroremail = isset($_GET['erroremail']) ? $_GET['erroremail'] : null; ?>
+                        <?php  if (isset($erroremail)) : ?>
+                            <p style='text-align: center; color:red'>email sudah terdaftar</p>
+                        <?php endif; ?>
+                        <div>
                           <label for="address" class="form-label" style="margin-top: 15px;">Address</label>
                           <input type="text" name="address" class="form-control" id="address" placeholder="Address">
                         </div>
