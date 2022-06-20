@@ -23,5 +23,3 @@
         }
     }
 ?>
-C:\xampp\htdocs\SI4309_B\Config\Regist\registUser.php
-C:\xampp\htdocs\SI4309_B\Pages\User\registUser.php

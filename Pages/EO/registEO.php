@@ -17,7 +17,7 @@
     <section>
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="../index.html">Event-Ku</a>
+              <a class="navbar-brand" href="../../index.php">Event-Ku</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -42,7 +42,7 @@
                         <p style="text-align: justify; color: #808080; font-size: 16px;">already have an account?<a style="font-weight: 600; text-decoration: none;" href="../loginAs.html">Login</a></p>
                     </div>
                     <!-- <p>sign in to use more features</p> -->
-                    <form autocomplete="off" action="#" method="POST" >
+                    <form autocomplete="off" action="../../Config/Regist/registEO.php" method="POST" >
                         <div >
                           <label for="name" class="form-label" style="margin-top: 15px;">Name</label>
                           <input type="text" name="name" class="form-control" id="name" placeholder="Name">
@@ -51,13 +51,17 @@
                           <label for="email" class="form-label" style="margin-top: 15px;">Email</label>
                           <input type="email" name="email" class="form-control" id="email" placeholder="Email">
                         </div>
+                        <?php  $erroremail = isset($_GET['erroremail']) ? $_GET['erroremail'] : null; ?>
+                        <?php  if (isset($erroremail)) : ?>
+                            <p style='text-align: center; color:red'>email sudah terdaftar</p>
+                        <?php endif; ?>
                         <div >
                           <label for="address" class="form-label" style="margin-top: 15px;">Address</label>
                           <input type="text" name="address" class="form-control" id="address" placeholder="Address">
                         </div>
                         <div >
-                          <label for="phoneNum" class="form-label" style="margin-top: 15px;">Phone Number</label>
-                          <input type="text" name="phoneNum" class="form-control" id="phoneNum" placeholder="Phone Number">
+                          <label for="phone" class="form-label" style="margin-top: 15px;">Phone Number</label>
+                          <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone Number">
                         </div>
                         <div >
                           <label for="password" class="form-label" style="margin-top: 15px;">Password</label>
@@ -67,6 +71,10 @@
                           <label for="Cpassword" class="form-label" style="margin-top: 15px;">Confirm Password</label>
                           <input type="password" name="Cpassword" class="form-control" id="Cpassword" placeholder="Confirm Password">
                         </div>
+                        <?php  $error = isset($_GET['error']) ? $_GET['error'] : null; ?>
+                        <?php  if (isset($error)) : ?>
+                            <p style='text-align: left; color:red; margin-top: 15px;'>konfirmasi password tidak sesuai</p>
+                        <?php endif; ?>
                         <div style="margin-bottom: 20px; margin-top: 35px;" class=" d-flex justify-content-center">
                             <button type="submit" name="submit" id="submit" class="btn btn-primary">Sign Up</button>
                         </div>
