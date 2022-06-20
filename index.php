@@ -26,7 +26,7 @@
                   
                 </ul>
                 <div class="d-flex">
-                  <a href="/Pages/loginAs.html" class="sign-in btn btn-primary me-2" >Sign In</a>
+                  <a href="Pages/loginAs.html" class="sign-in btn btn-primary me-2" >Sign In</a>
                   <a href="Pages/registAs.html" class="sign-up btn btn-outline-primary me-2" >Sign Up</a>
                 </div>
               </div>

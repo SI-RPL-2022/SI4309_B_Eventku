@@ -17,7 +17,7 @@
     <section>
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="../index.html">Event-Ku</a>
+              <a class="navbar-brand" href="../../index.php">Event-Ku</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -71,6 +71,10 @@
                           <label for="Cpassword" class="form-label" style="margin-top: 15px;">Confirm Password</label>
                           <input type="password" name="Cpassword" class="form-control" id="Cpassword" placeholder="Confirm Password">
                         </div>
+                        <?php  $error = isset($_GET['error']) ? $_GET['error'] : null; ?>
+                        <?php  if (isset($error)) : ?>
+                            <p style='text-align: left; color:red; margin-top: 15px;'>konfirmasi password tidak sesuai</p>
+                        <?php endif; ?>
                         <div style="margin-bottom: 20px; margin-top: 35px;" class=" d-flex justify-content-center">
                             <button type="submit" name="submit" id="submit" class="btn btn-primary">Sign Up</button>
                         </div>

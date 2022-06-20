@@ -14,12 +14,14 @@
             header("Location: ../../Pages/User/registUser.php?erroremail=true");
         } else{
             if($password == $Cpassword){
-                $query = "INSERT INTO user (id, password, name, email, address, job,) VALUES ('','$password','$nama','$email','$address','$job')";
+                $query = "INSERT INTO user (email, password, name, address, job) VALUES ('$email','$password','$name','$address','$job')";
                 $insert = mysqli_query($conn,$query);
-                header("Location: ../index.php");
+                header("Location: ../../index.php");
             } else{
-                header("Location: .../../Pages/User/registUser.php?error=true");
+                header("Location: ../../Pages/User/registUser.php?error=true");
             }
         }
     }
 ?>
+C:\xampp\htdocs\SI4309_B\Config\Regist\registUser.php
+C:\xampp\htdocs\SI4309_B\Pages\User\registUser.php
