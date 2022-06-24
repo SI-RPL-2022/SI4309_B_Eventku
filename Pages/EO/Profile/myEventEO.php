@@ -54,7 +54,7 @@
                         <a class="unchecked my-2" href="passwordEO.html">Password</a>
                     </div>
                     <div class="row">
-                        <a class="unchecked my-2" href="../../loginAs.html">Log out</a>
+                        <a class="unchecked my-2" href="../../../Config/Logout/logout.php">Log out</a>
                     </div>
                 </div>
 
