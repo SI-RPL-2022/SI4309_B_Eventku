@@ -16,7 +16,7 @@
     <section>
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="../index.html">Event-Ku</a>
+              <a class="navbar-brand" href="../../index.php">Event-Ku</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -38,7 +38,7 @@
                 <div class="col-6" style="padding-top: 51px; padding-left: 20px;">
                     <h1>Welcome to Event-Ku!</h1>
                     <p>sign in to use more features</p>
-                    <form autocomplete="off" method="POST">
+                    <form autocomplete="off" method="POST" action="../../Config/Login/loginUser.php">
                         <div >
                           <label for="email" class="form-label">Email</label>
                           <input type="email" name="email" class="form-control" id="email" placeholder="Email">
@@ -47,8 +47,12 @@
                           <label for="password" class="form-label">Password</label>
                           <input type="password" name="password" class="form-control" id="password" placeholder="password">
                         </div>
+                        <?php  $error = isset($_GET['error']) ? $_GET['error'] : null; ?>
+                        <?php  if (isset($error)) : ?>
+                            <p style='text-align: center; color:red'>password salah</p>
+                        <?php endif; ?>
                         <div style="margin-bottom: 20px; margin-top: 35px;" class=" d-flex justify-content-center">
-                            <a href="homePage.html" type="submit" name="submit" id="submit" class="btn btn-primary">Login</a>
+                            <button type="submit" name="submit" id="submit" class="btn btn-primary">Login</button>
                         </div>
                         <div>
                         </div>

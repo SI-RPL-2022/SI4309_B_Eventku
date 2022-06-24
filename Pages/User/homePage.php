@@ -26,7 +26,7 @@
                   
                 </ul>
                 <div class="d-flex ">
-                  <a style="color: white;" href="Profile/accountUser.html" class="navbar-brand">
+                  <a style="color: white;" href="Profile/accountUser.php" class="navbar-brand">
                       Your Name
                       <img src="https://raw.githubusercontent.com/mahli262/tugas-wad/main/Images/Tubes/Ellipse%2016.png" alt="" srcset="" width="50px">
                   </a>

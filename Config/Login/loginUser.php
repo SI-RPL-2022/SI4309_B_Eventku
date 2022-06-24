@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-include("connect.php");
+include("../connect.php");
 
 if(isset($_POST['submit'])){
     $email = $_POST['email'];
@@ -15,9 +15,9 @@ if(isset($_POST['submit'])){
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
 
-        header("Location: ../index.php");
+        header("Location: ../../Pages/User/homePage.php");
     } else{
-        header("Location: ../pages/login.php?error=true");
+        header("Location: ../../Pages/User/homePage.php?error=true");
     }
 }
 ?>
