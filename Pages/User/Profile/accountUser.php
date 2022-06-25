@@ -88,16 +88,16 @@
                             </div>
                             <div class="col-10 align-self-center">
                                 <div class="row id">
-                                    <h5><?php echo $name;?></h5>
+                                    <h5 style="font-size: 48px;"><?php echo $name;?></h5>
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-2">
                                         <button type="submit" class="btn btn-primary" style="width: 100%">Upload</button>
                                     </div>
                                     <div class="col-2">
                                         <button type="submit" class="btn btn-primary" style="width: 100%">Remove</button>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <!-- <div class="list id" style="margin-top: 50px;">
