@@ -180,8 +180,8 @@
                               max-width: 266px;
                               "> -->
                               <div class="card-body" style="padding-bottom: 0%">
-                                <h5 class="card-title"><?php echo $selects['title'] ?></h5>
-                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $selects['date'] ?></h6>
+                                <h5 class="card-title"><?php echo $view['title'] ?></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $view['date'] ?></h6>
                               </div>
                               <div class="card-body">
                                 <a class="btn btn-primary" style="width: 100%" href="Profile/detailEventUser.html" role="button">Details</a>

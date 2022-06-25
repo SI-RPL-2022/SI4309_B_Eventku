@@ -1,3 +1,29 @@
+<?php
+    session_start();
+    if(isset($_SESSION['email'])){
+      include("../../../Config/connect.php");
+      $email = $_SESSION['email'];
+
+      $query = "SELECT * FROM user WHERE email='$email'";
+      $select = mysqli_query($conn,$query);
+      $display = mysqli_fetch_assoc($select);
+      $name = $display['name'];
+      $job = $display['job'];
+      $address = $display['address'];
+
+      $queryRegist = "SELECT * FROM registrasi WHERE email='$email'";
+      $selectRegist = mysqli_query($conn, $queryRegist);
+      $displayRegist = mysqli_fetch_assoc($selectRegist);
+
+      // $event_id = $displayRegist['event_id'];
+      $event= $displayRegist["event_id"];
+      $queryMyEvent = "SELECT * FROM event WHERE event_id='$event'";
+      $selectMyEvent = mysqli_query($conn,$queryMyEvent);
+      $cekEvent = mysqli_num_rows($selectEvent);
+      
+    };
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +43,7 @@
     <section class="navigation">
         <nav class="header navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-              <a style="color: white;" class="brand navbar-brand" href="../../index.html">Event-Ku</a>
+              <a style="color: white;" class="brand navbar-brand" href="../homePage.php">Event-Ku</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -26,8 +52,8 @@
                   
                 </ul>
                 <div class="d-flex ">
-                  <a style="color: white;" href="" class="navbar-brand">
-                      Your Name
+                  <a style="color: white;" href="accountUser.php" class="navbar-brand">
+                  <?php echo $name;?>
                       <img src="https://raw.githubusercontent.com/mahli262/tugas-wad/main/Images/Tubes/Ellipse%2016.png" alt="" srcset="" width="50px">
                   </a>
                 </div>
@@ -45,16 +71,16 @@
             <div class="row" style="height: auto">
                 <div class="col-3">
                     <div class="row bg-new">
-                        <a class="unchecked my-2" href="accountUser.html">Account</a>
+                        <a class="unchecked my-2" href="accountUser.php">Account</a>
                     </div>
                     <div class="row">
-                        <a class="checked my-2" href="">My Event</a>
+                        <a class="checked my-2" href="#">My Event</a>
                     </div>
                     <div class="row">
-                        <a class="unchecked my-2" href="passwordUser.html">Password</a>
+                        <a class="unchecked my-2" href="passwordUser.php">Password</a>
                     </div>
                     <div class="row">
-                        <a class="unchecked my-2" href="">Log out</a>
+                        <a class="unchecked my-2" href="../../../Config/Logout/logout.php">Log out</a>
                     </div>
                 </div>
 
@@ -64,6 +90,9 @@
                     <div style="margin: 40px;">
                         <h2 class="page">My Event</h2>
                         <div class="row">
+                          <?php 
+                            while($view = (mysqli_fetch_assoc($$selectMyEvent))){
+                              ?>
                             <div class="col my-2 mx-1" style="max-width: 266px;">
                             <div class="card" style="
                             width: 256px;
@@ -80,14 +109,18 @@
                               max-width: 256px;
                               ">
                               <div class="card-body" style="padding-bottom: 0%">
-                                <h5 class="card-title">Suntik Masal</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Monday 7 am</h6>
+                                <h5 class="card-title"><?php echo $view['title'] ?></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $view['date'] ?></h6>
                               </div>
                               <div class="card-body">
                                 <a class="btn btn-primary" style="width: 100%" href="detailEventUser.html" role="button">Details</a>
                               </div>
                             </div>
                         </div>
+                          <?php  
+                          }
+                          ?>
+                            
                         </div>
                 </div>
             </div>

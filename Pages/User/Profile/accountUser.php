@@ -45,7 +45,7 @@
                   
                 </ul>
                 <div class="d-flex ">
-                  <a style="color: white;" href="" class="navbar-brand">
+                  <a style="color: white;" href="#" class="navbar-brand">
                   <?php echo $name;?>
                       <img src="https://raw.githubusercontent.com/mahli262/tugas-wad/main/Images/Tubes/Ellipse%2016.png" alt="" srcset="" width="50px">
                   </a>
@@ -113,7 +113,7 @@
                         <div class="button">
                             <a class="btn btn-primary" style="width: 100%" href="" role="button">Edit</a>
                         </div> -->
-                        <form action="../../../Config/Edit/editUser.php?" method="POST" autocomplete="off">
+                        <form action="../../../Config/Edit Account/editUser.php" method="POST" autocomplete="off">
                             <div class="list" style="margin-top: 50px;">
                                 <h6>Name</h6>
                                 <input type="text" value="<?php echo $name?>" name="name" class="form-control" id="name" placeholder="your name">

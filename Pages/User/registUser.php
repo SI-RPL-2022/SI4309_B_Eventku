@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,10 +53,15 @@
                           <label for="email" class="form-label" style="margin-top: 15px;">Email</label>
                           <input type="email" name="email" class="form-control" id="email" placeholder="Email">
                         </div>
-                        <?php  $erroremail = isset($_GET['erroremail']) ? $_GET['erroremail'] : null; ?>
-                        <?php  if (isset($erroremail)) : ?>
+                        <?php  $erroremail = (isset($_GET['erroremail']) ? $_GET['erroremail'] : null); ?>
+                        <?php echo $erroremail ?>
+                        <?php  if ($erroremail != null) { ?>
                             <p style='text-align: center; color:red'>email sudah terdaftar</p>
-                        <?php endif; ?>
+                            <?php $erroremail = null ?>
+                        <?php }
+                        else{
+                          echo "lanjut";
+                        }; ?>
                         <div>
                           <label for="address" class="form-label" style="margin-top: 15px;">Address</label>
                           <input type="text" name="address" class="form-control" id="address" placeholder="Address">
@@ -72,9 +79,9 @@
                           <input type="password" name="Cpassword" class="form-control" id="Cpassword" placeholder="Confirm Password">
                         </div>
                         <?php  $error = isset($_GET['error']) ? $_GET['error'] : null; ?>
-                        <?php  if (isset($error)) : ?>
+                        <?php  if (isset($error)) { ?>
                             <p style='text-align: left; color:red; margin-top: 15px;'>konfirmasi password tidak sesuai</p>
-                        <?php endif; ?>
+                        <?php }; ?>
                         <div style="margin-bottom: 20px; margin-top: 35px;" class=" d-flex justify-content-center">
                             <button type="submit" name="submit" id="submit" class="btn btn-primary">Sign Up</button>
                         </div>

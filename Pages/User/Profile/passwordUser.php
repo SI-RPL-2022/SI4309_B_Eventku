@@ -1,3 +1,22 @@
+<?php
+    session_start();
+    if(isset($_SESSION['email'])){
+      include("../../../Config/connect.php");
+      $email = $_SESSION['email'];
+
+      $query = "SELECT * FROM user WHERE email='$email'";
+      $select = mysqli_query($conn,$query);
+      $display = mysqli_fetch_assoc($select);
+      $name = $display['name'];
+      $job = $display['job'];
+      $address = $display['address'];
+
+      $queryEvent = "SELECT * FROM event";
+      $selectEvent = mysqli_query($conn, $queryEvent);
+      $cekEvent = mysqli_num_rows($selectEvent);
+    };
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,16 +64,16 @@
             <div class="row" style="height: auto">
                 <div class="col-3">
                     <div class="row bg-new">
-                        <a class="unchecked my-2" href="accountUser.html">Account</a>
+                        <a class="unchecked my-2" href="accountUser.php">Account</a>
                     </div>
                     <div class="row">
-                        <a class="unchecked my-2" href="myEvent.html">My Event</a>
+                        <a class="unchecked my-2" href="myEvent.php">My Event</a>
                     </div>
                     <div class="row">
-                        <a class="checked my-2" href="">Password</a>
+                        <a class="checked my-2" href="#">Password</a>
                     </div>
                     <div class="row">
-                        <a class="unchecked my-2" href="">Log out</a>
+                        <a class="unchecked my-2" href="../../../Config/Logout/logout.php">Log out</a>
                     </div>
                 </div>
 
@@ -63,11 +82,15 @@
                 border-radius: 10px; ">
                     <div style="margin: 40px;">
                         <h2 class="page">Password</h2>
-                        <form autocomplete="off" action="#" method="POST">
+                        <form autocomplete="off" action="../../../Config/Edit Account/editPassUser.php" method="POST">
                             <div >
                               <label for="password" class="form-label">Password</label>
                               <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                             </div>
+                            <?php  $error = isset($_GET['error']) ? $_GET['error'] : null; ?>
+                            <?php  if (isset($error)) : ?>
+                                <p style='text-align: center; color:red'>password salah</p>
+                            <?php endif; ?>
                             <div >
                               <label for="newpass" class="form-label">New Password</label>
                               <input type="password" name="newpass" class="form-control" id="newpass" placeholder="New Password">
@@ -76,6 +99,10 @@
                               <label for="renewpass" class="form-label">Retype-New Password</label>
                               <input type="password" name="renewpass" class="form-control" id="renewpass" placeholder="Retype-New Password">
                             </div>
+                            <?php  $error = isset($_GET['error']) ? $_GET['error'] : null; ?>
+                            <?php  if (isset($error)) : ?>
+                                <p style='text-align: left; color:red; margin-top: 15px;'>konfirmasi password tidak sesuai</p>
+                            <?php endif; ?>
                             <div style="margin-bottom: 20px; margin-top: 35px;" class=" d-flex justify-content-center">
                                 <button type="submit" name="submit" id="submit" class="btn btn-primary">Edit Password</button>
                             </div>
