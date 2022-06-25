@@ -1,3 +1,22 @@
+<?php
+    session_start();
+    if(isset($_SESSION['email'])){
+      include("../../../Config/connect.php");
+      $email = $_SESSION['email'];
+
+      $query = "SELECT * FROM user WHERE email='$email'";
+      $select = mysqli_query($conn,$query);
+      $display = mysqli_fetch_assoc($select);
+      $name = $display['name'];
+      $job = $display['job'];
+      $address = $display['address'];
+
+      $queryEvent = "SELECT * FROM event";
+      $selectEvent = mysqli_query($conn, $queryEvent);
+      $cekEvent = mysqli_num_rows($selectEvent);
+    };
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +36,7 @@
     <section class="navigation">
         <nav class="header navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-              <a style="color: white;" class="brand navbar-brand" href="../../index.html">Event-Ku</a>
+              <a style="color: white;" class="brand navbar-brand" href="../homePage.php">Event-Ku</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -27,7 +46,7 @@
                 </ul>
                 <div class="d-flex ">
                   <a style="color: white;" href="" class="navbar-brand">
-                      Your Name
+                  <?php echo $name;?>
                       <img src="https://raw.githubusercontent.com/mahli262/tugas-wad/main/Images/Tubes/Ellipse%2016.png" alt="" srcset="" width="50px">
                   </a>
                 </div>
@@ -45,13 +64,13 @@
             <div class="row" style="height: auto">
                 <div class="col-3">
                     <div class="row bg-new">
-                        <a class="checked my-2" href="">Account</a>
+                        <a class="checked my-2" href="#">Account</a>
                     </div>
                     <div class="row">
-                        <a class="unchecked my-2" href="myEvent.html">My Event</a>
+                        <a class="unchecked my-2" href="myEvent.php">My Event</a>
                     </div>
                     <div class="row">
-                        <a class="unchecked my-2" href="">Password</a>
+                        <a class="unchecked my-2" href="passwordUser.php">Password</a>
                     </div>
                     <div class="row">
                         <a class="unchecked my-2" href="../../../Config/Logout/logout.php">Log out</a>
@@ -69,7 +88,7 @@
                             </div>
                             <div class="col-10 align-self-center">
                                 <div class="row id">
-                                    <h5>Your Name</h5>
+                                    <h5><?php echo $name;?></h5>
                                 </div>
                                 <div class="row">
                                     <div class="col-2">
@@ -81,7 +100,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="list id" style="margin-top: 50px;">
+                        <!-- <div class="list id" style="margin-top: 50px;">
                             <h6>Name</h6>
                             <p>Your Name</p>
                             <h6>Email</h6>
@@ -93,7 +112,22 @@
                         </div>
                         <div class="button">
                             <a class="btn btn-primary" style="width: 100%" href="" role="button">Edit</a>
-                        </div>
+                        </div> -->
+                        <form action="../../../Config/Edit/editUser.php?" method="POST" autocomplete="off">
+                            <div class="list" style="margin-top: 50px;">
+                                <h6>Name</h6>
+                                <input type="text" value="<?php echo $name?>" name="name" class="form-control" id="name" placeholder="your name">
+                                <h6>Email</h6>
+                                <input type="text" value="<?php echo $email?>" name="email" class="form-control" id="email" placeholder="your email" disabled>
+                                <h6>Job</h6>
+                                <input type="text" value="<?php echo $job?>" name="job" class="form-control" id="job" placeholder="your Job">
+                                <h6>Address</h6>
+                                <input type="text" value="<?php echo $address?>" name="address" class="form-control" id="address" placeholder="your address">
+                            </div>
+                            <div class="button">
+                                <input type="submit" name="submit" id="submit" class="btn btn-primary" style="width: 100%" value="Edit">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
