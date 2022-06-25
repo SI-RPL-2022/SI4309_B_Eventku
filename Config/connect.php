@@ -4,8 +4,8 @@
         $dbname = "rpl";
         $dbpass = "";
 
-        $conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-        print_r($conn);
+        $conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname,3306);
+
         if(!$conn) {
             echo "alert(Failed to connect)";
         }

@@ -58,10 +58,7 @@
                         <?php  if ($erroremail != null) { ?>
                             <p style='text-align: center; color:red'>email sudah terdaftar</p>
                             <?php $erroremail = null ?>
-                        <?php }
-                        else{
-                          echo "lanjut";
-                        }; ?>
+                        <?php } ?>
                         <div>
                           <label for="address" class="form-label" style="margin-top: 15px;">Address</label>
                           <input type="text" name="address" class="form-control" id="address" placeholder="Address">
