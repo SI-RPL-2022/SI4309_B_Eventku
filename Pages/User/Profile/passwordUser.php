@@ -46,7 +46,7 @@
                 </ul>
                 <div class="d-flex ">
                   <a style="color: white;" href="" class="navbar-brand">
-                      Your Name
+                      <?php echo $name ?>
                       <img src="https://raw.githubusercontent.com/mahli262/tugas-wad/main/Images/Tubes/Ellipse%2016.png" alt="" srcset="" width="50px">
                   </a>
                 </div>
@@ -99,9 +99,13 @@
                               <label for="renewpass" class="form-label">Retype-New Password</label>
                               <input type="password" name="renewpass" class="form-control" id="renewpass" placeholder="Retype-New Password">
                             </div>
-                            <?php  $error = isset($_GET['error']) ? $_GET['error'] : null; ?>
-                            <?php  if (isset($error)) : ?>
+                            <?php  $errorNew = isset($_GET['errorNew']) ? $_GET['errorNew'] : null; ?>
+                            <?php  if (isset($errorNew)) : ?>
                                 <p style='text-align: left; color:red; margin-top: 15px;'>konfirmasi password tidak sesuai</p>
+                            <?php endif; ?>
+                            <?php  $change = isset($_GET['change']) ? $_GET['change'] : null; ?>
+                            <?php  if (isset($change)) : ?>
+                                <p style='text-align: left; color:green; margin-top: 15px;'>Password berhasil di rubah</p>
                             <?php endif; ?>
                             <div style="margin-bottom: 20px; margin-top: 35px;" class=" d-flex justify-content-center">
                                 <button type="submit" name="submit" id="submit" class="btn btn-primary">Edit Password</button>

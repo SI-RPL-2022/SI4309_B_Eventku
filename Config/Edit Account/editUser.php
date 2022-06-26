@@ -4,7 +4,6 @@
     include("../connect.php");
     if(isset($_POST['submit'])){
         $email = $_SESSION['email'];
-        echo $email;
         $name = isset($_POST['name']) ? $_POST['name'] : null;
         $job = isset($_POST['job']) ? $_POST['job'] : null;
         $address = isset($_POST['address']) ? $_POST['address'] : null;
