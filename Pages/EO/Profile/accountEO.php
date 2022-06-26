@@ -67,10 +67,10 @@
                         <a class="checked my-2" href="">Account</a>
                     </div>
                     <div class="row">
-                        <a class="unchecked my-2" href="myEventEO.html">My Event</a>
+                        <a class="unchecked my-2" href="myEventEO.php">My Event</a>
                     </div>
                     <div class="row">
-                        <a class="unchecked my-2" href="passwordEO.html">Password</a>
+                        <a class="unchecked my-2" href="passwordEO.php">Password</a>
                     </div>
                     <div class="row">
                         <a class="unchecked my-2" href="../../../Config/Logout/logout.php">Log out</a>
@@ -91,12 +91,12 @@
                                     <h5><?php echo $name;?></h5>
                                 </div>
                                 <div class="row">
-                                    <div class="col-2">
+                                    <!-- <div class="col-2">
                                         <button type="submit" class="btn btn-primary" style="width: 100%">Upload</button>
                                     </div>
                                     <div class="col-2">
                                         <button type="submit" class="btn btn-primary" style="width: 100%">Remove</button>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
