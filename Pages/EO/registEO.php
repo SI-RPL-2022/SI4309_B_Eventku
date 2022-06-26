@@ -54,6 +54,7 @@
                         <?php  $erroremail = isset($_GET['erroremail']) ? $_GET['erroremail'] : null; ?>
                         <?php  if (isset($erroremail)) : ?>
                             <p style='text-align: center; color:red'>email sudah terdaftar</p>
+                            <?php $erroremail = null ?>
                         <?php endif; ?>
                         <div >
                           <label for="address" class="form-label" style="margin-top: 15px;">Address</label>

@@ -54,7 +54,6 @@
                           <input type="email" name="email" class="form-control" id="email" placeholder="Email">
                         </div>
                         <?php  $erroremail = (isset($_GET['erroremail']) ? $_GET['erroremail'] : null); ?>
-                        <?php echo $erroremail ?>
                         <?php  if ($erroremail != null) { ?>
                             <p style='text-align: center; color:red'>email sudah terdaftar</p>
                             <?php $erroremail = null ?>

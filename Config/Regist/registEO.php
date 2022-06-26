@@ -11,7 +11,7 @@
 
         $queryCek = "SELECT * FROM eo WHERE email = '$email'";
         $cekemail = mysqli_query($conn, $queryCek);
-        
+        echo $email;
         if(mysqli_fetch_assoc($cekemail)){
             header("Location: ../../Pages/EO/registEO.php?erroremail=true");
         } else{
