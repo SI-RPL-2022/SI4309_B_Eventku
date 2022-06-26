@@ -1,3 +1,27 @@
+<?php
+    session_start();
+    if(isset($_SESSION['email'])){
+      include("../../../Config/connect.php");
+      $email = $_SESSION['email'];
+
+      $query = "SELECT * FROM eo WHERE email='$email'";
+      $select = mysqli_query($conn,$query);
+      $display = mysqli_fetch_assoc($select);
+      $nama = $display['name'];
+
+      $queryEvent = "SELECT * FROM event WHERE eo='$email'";
+      $selectEvent = mysqli_query($conn, $queryEvent);
+      $cekEvent = mysqli_num_rows($selectEvent);
+      
+      // $displayEvent = mysqli_fetch_assocc($select);
+      // $imageEvent = $displayEvent['image'];
+      // $titleEvent = $displayEvent['title'];
+      // $dateEvent = $displayEvent['date'];
+
+      
+    };
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +41,7 @@
     <section class="navigation">
         <nav class="header navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-              <a style="color: white;" class="brand navbar-brand" href="">Event-Ku</a>
+              <a style="color: white;" class="brand navbar-brand" href="#">Event-Ku</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -26,8 +50,9 @@
                   
                 </ul>
                 <div class="d-flex ">
-                  <a style="color: white;" href="accountEO.html" class="navbar-brand">
-                      Your Name
+                  <a style="color: white;" href="accountEO.php" class="navbar-brand">
+                  <?php echo $nama;?>
+                  <!-- <?php echo $cekEvent; ?> -->
                       <img src="https://raw.githubusercontent.com/mahli262/tugas-wad/main/Images/Tubes/Ellipse%2016.png" alt="" srcset="" width="50px">
                   </a>
                 </div>
@@ -45,13 +70,13 @@
             <div class="row" style="height: auto">
                 <div class="col-3">
                     <div class="row bg-new">
-                        <a class="unchecked my-2" href="accountEO.html">Account</a>
+                        <a class="unchecked my-2" href="accountEO.php">Account</a>
                     </div>
                     <div class="row">
-                        <a class="checked my-2" href="">My Event</a>
+                        <a class="checked my-2" href="#">My Event</a>
                     </div>
                     <div class="row">
-                        <a class="unchecked my-2" href="passwordEO.html">Password</a>
+                        <a class="unchecked my-2" href="passwordEO.php">Password</a>
                     </div>
                     <div class="row">
                         <a class="unchecked my-2" href="../../../Config/Logout/logout.php">Log out</a>
@@ -64,10 +89,10 @@
                     <div style="margin: 40px;">
                         <h2 class="page">My Event</h2>
                         <div>
-                            <a class="btn btn-primary" style="width: 25%" href="detailEventUser.html" role="button">+New Event</a>
+                            <a class="btn btn-primary" style="width: 25%" href="../addEvent.php" role="button">+New Event</a>
                           </div>
                         <div class="row">
-                            <div class="col my-2 mx-1" style="max-width: 266px;">
+                            <!-- <div class="col my-2 mx-1" style="max-width: 266px;">
                             <div class="card" style="
                             width: 256px;
                             max-width: 256px;
@@ -90,7 +115,59 @@
                                 <a class="btn btn-primary" style="width: 100%" href="detailEventEO.html" role="button">Details</a>
                               </div>
                             </div>
-                        </div>
+                        </div> -->
+                              <?php 
+                              if ($cekEvent>0) { ?>
+                              <?php 
+                                while($view = mysqli_fetch_assoc($selectEvent)) {  ?>
+                                  <div class="col my-2 mx-1" style="max-width: 266px;">
+                                  <div class="card" style="
+                                  width: 256px;
+                                  max-width: 256px;
+                                  height: 444px;
+                                  max-height: 444px;
+                                  background: #FFFFFF;
+                                  box-shadow: 0px 0px 20px rgba(100, 100, 100, 0.15);
+                                  border-radius: 10px;
+                                  ">
+                                  <?php $imageEvent = isset($view['image']) ? $view['image'] : null; ?>
+                                  <?php 
+                                  if ($imageEvent == $view['image']){
+                                    echo '<img src="';$view['image'];'" class="card-img-top" alt="..." style="
+                                    height: 266px;
+                                    width: 266px;
+                                    max-width: 266px;
+                                    ">';
+                                  } else{
+                                    echo '<img src="https://raw.githubusercontent.com/mahli262/tugas-wad/main/Images/Tubes/Group%2071.png" class="card-img-top" alt="..." style="
+                                    height: 266px;
+                                    width: 266px;
+                                    max-width: 266px;
+                                    ">';
+                                  }
+                                  ?>
+                                    <!-- <img src="https://www.vibesofindia.com/wp-content/uploads/2021/09/covid-19-vaccination-1500-991-2.jpg" class="card-img-top" alt="..." style="
+                                    height: 266px;
+                                    width: 266px;
+                                    max-width: 266px;
+                                    "> -->
+                                    <div class="card-body" style="padding-bottom: 0%">
+                                      <h5 class="card-title"><?php echo $view['title'] ?></h5>
+                                      <h6 class="card-subtitle mb-2 text-muted"><?php echo $view['date'] ?></h6>
+                                    </div>
+                                    <div class="card-body">
+                                      <a class="btn btn-primary" style="width: 100%" href="Profile/detailEventUser.html" role="button">Details</a>
+                                    </div>
+                                  </div>
+                              </div>
+
+                                <?php //close while
+                                }; ?> 
+                                
+                                <?php //close if
+                              } else {?>
+                                <p></p>
+                              <?php }?>
                         </div>
                 </div>
             </div>

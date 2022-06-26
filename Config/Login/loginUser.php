@@ -14,10 +14,10 @@ if(isset($_POST['submit'])){
     if($password == $display['password']){
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
-
+        echo $display['password'];
         header("Location: ../../Pages/User/homePage.php");
     } else{
-        header("Location: ../../Pages/User/homePage.php?error=true");
+        header("Location: ../../Pages/User/loginUser.php?error=true");
     }
 }
 ?>
