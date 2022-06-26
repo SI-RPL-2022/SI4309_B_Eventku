@@ -9,7 +9,9 @@
         $password = isset($_POST['password']) ? $_POST['password'] : null;
         $Cpassword = isset($_POST['Cpassword']) ? $_POST['Cpassword'] : null;
 
-        $cekemail = mysqli_query($conn, "SELECT email FROM eo WHERE email = '$email'");
+        $queryCek = "SELECT * FROM eo WHERE email = '$email'";
+        $cekemail = mysqli_query($conn, $queryCek);
+        
         if(mysqli_fetch_assoc($cekemail)){
             header("Location: ../../Pages/EO/registEO.php?erroremail=true");
         } else{

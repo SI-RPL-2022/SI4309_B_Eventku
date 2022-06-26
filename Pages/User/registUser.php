@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../../Styles/login.css">
     <link rel="icon" href="https://raw.githubusercontent.com/mahli262/tugas-wad/main/Images/Tubes/logo.png" type="image/icon type">
 
-    <title>Login - Event-Ku</title>
+    <title>Regist - Event-Ku</title>
 </head>
 <body>
     <section>
