@@ -45,7 +45,7 @@
                   
                 </ul>
                 <div class="d-flex ">
-                  <a style="color: white;" href="" class="navbar-brand">
+                  <a style="color: white;" href="accountEO.php" class="navbar-brand">
                   <?php echo $name ?>
                       <img src="https://raw.githubusercontent.com/mahli262/tugas-wad/main/Images/Tubes/Ellipse%2016.png" alt="" srcset="" width="50px">
                   </a>
